@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyBook</string>
+    <string name="read">Baca</string>
+    <string name="favorite">Favorit</string>
+    <string name="detail">Detail</string>
+    <string name="book_title">Judul Buku</string>
+    <string name="share">Share</string>
+</resources>
