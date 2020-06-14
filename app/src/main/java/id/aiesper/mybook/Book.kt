@@ -5,6 +5,7 @@ data class Book(
     var author: String = "",
     var year: String = "",
     var type: String = "",
-    var detail: String = "",
+    var desc: String = "",
+    val genre: String = "",
     var photo: Int = 0
 )

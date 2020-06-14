@@ -27,19 +27,6 @@ object BooksData {
         "Adam Smith"
     )
 
-    private val bookYear = arrayOf(
-        "1945",
-        "1980",
-        "1978",
-        "1997",
-        "1980",
-        "2005",
-        "1949",
-        "2011",
-        "2019",
-        "1776"
-    )
-
     private val bookType = arrayOf(
         "Fiksi",
         "Fiksi",

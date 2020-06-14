@@ -1,5 +1,6 @@
 package id.aiesper.mybook
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,8 +23,22 @@ class ListBookAdapter(val listBook: ArrayList<Book>) : RecyclerView.Adapter<List
             .load(book.photo)
             .apply(RequestOptions().override(55, 55))
             .into(holder.imgPhoto)
-        holder.tvName.text = book.title
-        holder.tvDetail.text = book.detail
+        holder.tvTitle.text = book.title
+        holder.tvDesc.text = book.desc
+
+        val mContext = holder.itemView.context
+
+        holder.itemView.setOnClickListener {
+            val moveDetail = Intent(mContext, detail_book::class.java)
+            moveDetail.putExtra(detail_book.EXTRA_TITLE, book.title)
+            moveDetail.putExtra(detail_book.EXTRA_AUTHOR, book.author)
+            moveDetail.putExtra(detail_book.EXTRA_DESC, book.desc)
+            moveDetail.putExtra(detail_book.EXTRA_PHOTO, book.photo)
+            moveDetail.putExtra(detail_book.EXTRA_TYPE, book.type)
+            moveDetail.putExtra(detail_book.EXTRA_GENRE, book.genre)
+            mContext.startActivity(moveDetail)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -31,8 +46,8 @@ class ListBookAdapter(val listBook: ArrayList<Book>) : RecyclerView.Adapter<List
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-        var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
+        var tvTitle: TextView = itemView.findViewById(R.id.book_title)
+        var tvDesc: TextView = itemView.findViewById(R.id.book_desc)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
     }
 }

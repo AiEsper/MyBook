@@ -15,7 +15,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@color/colorPrimary">
+
         <ImageView
             android:id="@+id/img_item_photo"
             android:layout_width="150dp"
@@ -23,8 +25,9 @@
             android:layout_marginBottom="4dp"
             android:scaleType="centerCrop"
             tools:src="@color/colorAccent" />
+
         <TextView
-            android:id="@+id/tv_item_name"
+            android:id="@+id/book_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -32,45 +35,50 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
             android:layout_toEndOf="@id/img_item_photo"
+            android:fontFamily="@font/sf_pro_bold"
+            android:textColor="@color/colorAccent"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:text="@string/book_title" />
+
         <TextView
-            android:id="@+id/tv_item_detail"
+            android:id="@+id/book_author"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/layout_button"
-            android:layout_below="@id/tv_item_name"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/book_title"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_toEndOf="@id/img_item_photo"
-            android:ellipsize="end"
-            android:maxLines="5"
-            tools:text="@string/detail" />
-        <LinearLayout
-            android:id="@+id/layout_button"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            tools:text="@string/book_author" />
+
+        <TextView
+            android:id="@+id/book_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="16dp"
+            android:layout_below="@id/book_author"
+            android:layout_margin="16dp"
             android:layout_toEndOf="@id/img_item_photo"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btn_set_detail"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/detail"
-                android:textSize="12sp" />
-            <Button
-                android:id="@+id/btn_set_share"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/share"
-                android:textSize="12sp" />
-        </LinearLayout>
+            android:fontFamily="@font/sf_pro_medium"
+            android:textSize="12sp"
+            android:textColor="@color/colorAccent"
+            tools:text="@string/book_type"/>
+
+        <RatingBar
+            style = "?android:attr/ratingBarStyleSmall"
+            android:id="@+id/book_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/book_type"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:numStars="5"
+            android:rating="4.5"
+            android:stepSize="0.5"/>
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>
