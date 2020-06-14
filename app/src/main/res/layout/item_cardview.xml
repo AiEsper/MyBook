@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginBottom="4dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
     card_view:cardCornerRadius="4dp">
 
     <RelativeLayout
@@ -23,6 +23,7 @@
             android:layout_width="150dp"
             android:layout_height="220dp"
             android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
             android:scaleType="centerCrop"
             tools:src="@color/colorAccent" />
 

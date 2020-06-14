@@ -66,5 +66,59 @@ object BooksData {
         "Sebuah Magnum Opus oleh ekonom dan Filsuf Irlandia Adam Smith yang hingga saat ini menjadi ajaran fundamental teori ekonomi klasik"
     )
 
+    private val photo = intArrayOf(
+        R.drawable.ico_animal_farm,
+        R.drawable.ico_bumi_manusia,
+        R.drawable.ico_c,
+        R.drawable.ico_cosmos,
+        R.drawable.ico_ggs,
+        R.drawable.ico_laskar_pelangi,
+        R.drawable.ico_ninety,
+        R.drawable.ico_sapiens,
+        R.drawable.ico_segala,
+        R.drawable.ico_the_wealth
+    )
+
+    fun getBooksList(): ArrayList<Book> {
+        val tempList = arrayListOf<Book>()
+        for (i in bookTitle.indices) {
+            val book = Book(
+                title       = this.bookTitle[i],
+                author      = this.bookAuthor[i],
+                desc        = this.bookDesc[i],
+                type        = this.bookType[i],
+                genre       = this.bookGenre[i],
+                photo       = this.photo[i]
+            )
+            tempList.add(book)
+        }
+        return tempList
+    }
+
+    val listData: java.util.ArrayList<Book>
+        get() {
+            val list = arrayListOf<Book>()
+            for (i in bookTitle.indices) {
+                val book = Book(
+                    title       = this.bookTitle[i],
+                    author      = this.bookAuthor[i],
+                    desc        = this.bookDesc[i],
+                    type        = this.bookType[i],
+                    genre       = this.bookGenre[i],
+                    photo       = this.photo[i]
+                )
+                list.add(book)
+            }
+            return list
+        }
+
+    fun getFruitX(position: Int): Book = Book(
+        title       = this.bookTitle[position],
+        author      = this.bookAuthor[position],
+        desc        = this.bookDesc[position],
+        type        = this.bookType[position],
+        genre       = this.bookGenre[position],
+        photo       = this.photo[position]
+    )
 
 }
