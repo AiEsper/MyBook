@@ -22,22 +22,27 @@ class ListBookAdapter(private val listBook: ArrayList<Book>) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val book = listBook[position]
+        val (title,author,desc,type,genre,photo) = listBook[position]
         Glide.with(holder.itemView.context)
-            .load(book.photo)
+            .load(photo)
             .apply(RequestOptions().override(55, 55))
             .into(holder.imgPhoto)
 
-        holder.tvTitle.text = book.title
-        holder.tvAuthor.text = book.author
-        holder.tvType.text = book.type
+        holder.tvTitle.text = title
+        holder.tvAuthor.text = author
+        holder.tvType.text = type
 
         val mContext = holder.itemView.context
 
         holder.itemView.setOnClickListener {
-            val goToDetail = Intent(holder.itemView.context, DetailActivity::class.java)
-            goToDetail.putExtra("position", position)
-            holder.itemView.context.startActivity(goToDetail)
+            val moveDetail = Intent(mContext, DetailActivity::class.java)
+            moveDetail.putExtra(DetailActivity.EXTRA_TITLE, title)
+            moveDetail.putExtra(DetailActivity.EXTRA_AUTHOR, author)
+            moveDetail.putExtra(DetailActivity.EXTRA_DESC, desc)
+            moveDetail.putExtra(DetailActivity.EXTRA_TYPE, type)
+            moveDetail.putExtra(DetailActivity.EXTRA_GENRE, genre)
+            moveDetail.putExtra(DetailActivity.EXTRA_PHOTO, photo)
+            mContext.startActivity(moveDetail)
         }
 
     }

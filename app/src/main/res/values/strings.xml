@@ -1,12 +1,11 @@
 <resources>
     <string name="app_name">MyBook</string>
-    <string name="read">Baca</string>
-    <string name="favorite">Favorit</string>
-    <string name="detail">Detail</string>
     <string name="book_desc">Deskripsi Buku</string>
     <string name="book_title">Judul Buku</string>
     <string name="book_author">Pengarang</string>
     <string name="book_type">Tipe Buku</string>
     <string name="share">Share</string>
     <string name="book_genre">Genre</string>
+    <string name="about">Juan Rico</string>
+    <string name="email">juanrico.jrg@gmail.com</string>
 </resources>
